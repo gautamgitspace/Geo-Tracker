@@ -42,6 +42,7 @@ public class GPSTracker extends Service implements LocationListener
 	private static final long updateInterval = 1000 * 60 * 1;
 	static final String TAG = "[GPS-DEBUG]";
 	protected LocationManager locationManager;
+	protected LocationListener locationListener;
 
 	public GPSTracker(Context context)
 	{
@@ -54,6 +55,7 @@ public class GPSTracker extends Service implements LocationListener
 	{
 		try
 		{
+			Log.v(TAG, "trying to get location from Wi-Fi or Cellular Towers");
 			locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, updateInterval, distance, this);
 			Log.v(TAG, "NETWORK BASED");
 			if (locationManager != null)
@@ -63,6 +65,9 @@ public class GPSTracker extends Service implements LocationListener
 				{
 					latitude = location.getLatitude();
 					longitude = location.getLongitude();
+					Log.v(TAG, "LAT: " + Double.toString(latitude));
+					Log.v(TAG, "LONG: " + Double.toString(longitude));
+					Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
 				}
 			}
 		}
@@ -79,14 +84,24 @@ public class GPSTracker extends Service implements LocationListener
 		Log.v(TAG, "GPS BASED");
 		if (locationManager != null)
 		{
+			Log.v(TAG, "GPS BASED 1");
 			location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 			if (location != null)
 			{
+				Log.v(TAG, "GPS BASED 2");
 				latitude = location.getLatitude();
 				longitude = location.getLongitude();
 				Log.v(TAG, "LAT: " + Double.toString(latitude));
 				Log.v(TAG, "LONG: " + Double.toString(longitude));
 			}
+			if(location==null)
+			{
+				Log.v(TAG, "Location Returned NULL");
+			}
+		}
+		if(locationManager==null)
+		{
+			Log.v(TAG, "Location Manager Returned NULL");
 		}
 
 		return location;
@@ -101,20 +116,13 @@ public class GPSTracker extends Service implements LocationListener
 			isGPSEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
 			isNetworkEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
 
-			if (!isGPSEnabled && !isNetworkEnabled)
-			{
-				Log.v(TAG, "No Network Coverage or GPS disabled");
-			}
-			else
-			{
-				//Check for Network
 				if (isNetworkEnabled)
 				{
 					Log.v(TAG,"Network Based Location Services are ENABLED");
 				}
 				if(!isNetworkEnabled)
 				{
-					Log.v(TAG,"isProviderEnabled returned FALSE");
+					Log.v(TAG,"isProviderEnabled returned FALSE for Provider Type: NETWORK");
 				}
 				//Check for GPS
 				if (isGPSEnabled)
@@ -122,7 +130,6 @@ public class GPSTracker extends Service implements LocationListener
 					this.canGetLocation = true;
 					Log.v(TAG, "GPS Based Location Services are ENABLED");
 				}
-			}
 		}
 		catch (Exception e)
 		{
@@ -146,9 +153,8 @@ public class GPSTracker extends Service implements LocationListener
 		return this.canGetLocation;
 	}
 
-	public boolean showSettingsAlert()
+	public void showSettingsAlert()
 	{
-
 		Location location;
 		AlertDialog.Builder alertDialog = new AlertDialog.Builder(mContext);
 		alertDialog.setTitle("GPS disabled");
@@ -164,12 +170,12 @@ public class GPSTracker extends Service implements LocationListener
 			public void onClick(DialogInterface dialog, int which)
 			{
 				getLocationByNetwork();
-				useNetwork=true;
+				Toast.makeText(mContext, "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
+
 			}
 		});
 
 		alertDialog.show();
-		return useNetwork;
 	}
 
 	public double getLatitude()

@@ -28,9 +28,7 @@ public class TrackActivity extends Activity
 			@Override
 			public void onClick(View arg0)
 			{
-				// create class object
 		        gps = new GPSTracker(TrackActivity.this);
-				// check if GPS enabled		
 		        if(gps.canGetLocation())
 				{
 					gps.getLocationByGPS();
@@ -42,15 +40,9 @@ public class TrackActivity extends Activity
 				else
 				{
 		        	//CASE - when GPS is disabled on device. Prompt user to enable GPS or user Network instead
-					Log.v(TAG, "Trying to fetch location from network");
-		        	boolean result=gps.showSettingsAlert();
-					if(result)
-					{
-						double latitude = gps.getLatitude();
-						double longitude = gps.getLongitude();
-						// \n is for new line
-						Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
-					}
+					Log.v(TAG, "No GPS services were found, fail-over to NETWORK");
+		        	gps.showSettingsAlert();
+
 		        }
 				
 			}

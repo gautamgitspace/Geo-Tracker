@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="android-android-8">
+    <CLASSES>
+      <root url="jar://$ANDROID_SDK_HOME$/Library/Android/sdk/platforms/android-8/android.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

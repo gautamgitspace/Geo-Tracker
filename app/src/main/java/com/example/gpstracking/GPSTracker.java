@@ -1,3 +1,13 @@
+/**
+ //  MBP111.0138.B16
+ //  System Serial: C02P4SP9G3QH
+ //  Created by Abhishek Gautam on 4/04/2016
+ //  agautam2@buffalo.edu
+ //  University at Buffalo, The State University of New York.
+ //  Copyright © 2016 Gautam. All rights reserved.
+ */
+
+
 package com.example.gpstracking;
 
 import android.app.AlertDialog;

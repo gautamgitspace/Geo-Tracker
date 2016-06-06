@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/Gautam/AndroidStudioProjects/AndroidGPSTracking/app/src/main/AndroidManifest.xml:2:1-29:12
+ADDED from /Users/Gautam/AndroidStudioProjects/AndroidGPSTracking/app/src/main/AndroidManifest.xml:2:1-32:12
 	xmlns:android
 		ADDED from /Users/Gautam/AndroidStudioProjects/AndroidGPSTracking/app/src/main/AndroidManifest.xml:2:11-69
 	package
@@ -66,3 +66,11 @@ uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from /Users/Gautam/AndroidStudioProjects/AndroidGPSTracking/app/src/main/AndroidManifest.xml:27:5-79
 	android:name
 		ADDED from /Users/Gautam/AndroidStudioProjects/AndroidGPSTracking/app/src/main/AndroidManifest.xml:27:22-76
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/Gautam/AndroidStudioProjects/AndroidGPSTracking/app/src/main/AndroidManifest.xml:28:5-81
+	android:name
+		ADDED from /Users/Gautam/AndroidStudioProjects/AndroidGPSTracking/app/src/main/AndroidManifest.xml:28:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/Gautam/AndroidStudioProjects/AndroidGPSTracking/app/src/main/AndroidManifest.xml:29:5-80
+	android:name
+		ADDED from /Users/Gautam/AndroidStudioProjects/AndroidGPSTracking/app/src/main/AndroidManifest.xml:29:22-77

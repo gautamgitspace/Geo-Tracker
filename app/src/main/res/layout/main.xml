@@ -8,15 +8,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Find Me"
-        android:layout_marginBottom="153dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="94dp" />
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Export"
+        android:layout_alignTop="@+id/button3"
+        android:layout_toLeftOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create"
+        android:layout_alignTop="@+id/button1"
+        android:layout_alignRight="@+id/btnShowLocation" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Geo Tracker"
+        android:text="Geo Tracker v1.2"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -36,6 +51,18 @@
         android:layout_height="match_parent"
         android:layout_alignBottom="@+id/textView2"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="112dp"></FrameLayout>
+        android:layout_marginLeft="112dp">
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="100dp"
+        android:layout_below="@+id/btnShowLocation"
+        android:layout_toRightOf="@+id/textView" />
 
 </RelativeLayout>

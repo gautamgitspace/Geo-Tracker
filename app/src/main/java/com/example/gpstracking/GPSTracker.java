@@ -1,5 +1,6 @@
 /**
  //  MBP111.0138.B16
+ //  Geo Tracker v1.2 ~ with database functionality
  //  System Serial: C02P4SP9G3QH
  //  Created by Abhishek Gautam on 4/04/2016
  //  agautam2@buffalo.edu
@@ -12,9 +13,12 @@ package com.example.gpstracking;
 
 import android.app.AlertDialog;
 import android.app.Service;
+import android.content.ContentProvider;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -23,6 +27,11 @@ import android.os.IBinder;
 import android.provider.Settings;
 import android.util.Log;
 import android.widget.Toast;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class GPSTracker extends Service implements LocationListener
 {
@@ -67,7 +76,6 @@ public class GPSTracker extends Service implements LocationListener
 					longitude = location.getLongitude();
 					Log.v(TAG, "LAT: " + Double.toString(latitude));
 					Log.v(TAG, "LONG: " + Double.toString(longitude));
-					Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
 				}
 			}
 		}
@@ -93,6 +101,15 @@ public class GPSTracker extends Service implements LocationListener
 				longitude = location.getLongitude();
 				Log.v(TAG, "LAT: " + Double.toString(latitude));
 				Log.v(TAG, "LONG: " + Double.toString(longitude));
+
+					ContentValues contentValues = new ContentValues();
+					DBHandler dbHandler = new DBHandler(mContext);
+					SQLiteDatabase sqLiteDatabase = dbHandler.getWritableDatabase();
+					contentValues.put("LAT",latitude);
+					contentValues.put("LONG",longitude);
+					sqLiteDatabase.insert("footRecords", null, contentValues);
+					sqLiteDatabase.close();
+
 			}
 			if(location==null)
 			{
@@ -173,7 +190,7 @@ public class GPSTracker extends Service implements LocationListener
 			public void onClick(DialogInterface dialog, int which)
 			{
 				getLocationByNetwork();
-				Toast.makeText(mContext, "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
+				Toast.makeText(mContext, "You are at - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
 
 			}
 		});

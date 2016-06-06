@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/Gautam/AndroidStudioProjects/AndroidGPSTracking/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/a.png",
+        "source": "/Users/Gautam/AndroidStudioProjects/AndroidGPSTracking/app/src/main/res/drawable-ldpi/a.png"
+    },
+    {
         "merged": "/Users/Gautam/AndroidStudioProjects/AndroidGPSTracking/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_launcher.png",
         "source": "/Users/Gautam/AndroidStudioProjects/AndroidGPSTracking/app/src/main/res/drawable-ldpi/ic_launcher.png"
     }

@@ -35,7 +35,7 @@ public class TrackActivity extends Activity
 					double latitude = gps.getLatitude();
 					double longitude = gps.getLongitude();
 		        	// \n is for new line
-		        	Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();	
+		        	Toast.makeText(getApplicationContext(), "You are at - \nLatitude: " + latitude + "\nLongitude: " + longitude, Toast.LENGTH_LONG).show();
 		        }
 				else
 				{

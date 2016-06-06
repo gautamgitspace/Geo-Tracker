@@ -7,8 +7,8 @@
                     "startLine": 2,
                     "startColumn": 4,
                     "startOffset": 55,
-                    "endColumn": 55,
-                    "endOffset": 106
+                    "endColumn": 47,
+                    "endOffset": 98
                 },
                 "from": {
                     "file": "/Users/Gautam/AndroidStudioProjects/AndroidGPSTracking/app/src/main/res/values/strings.xml",
@@ -16,8 +16,8 @@
                         "startLine": 4,
                         "startColumn": 4,
                         "startOffset": 135,
-                        "endColumn": 55,
-                        "endOffset": 186
+                        "endColumn": 47,
+                        "endOffset": 178
                     }
                 }
             },
@@ -25,9 +25,9 @@
                 "to": {
                     "startLine": 3,
                     "startColumn": 4,
-                    "startOffset": 111,
+                    "startOffset": 103,
                     "endColumn": 74,
-                    "endOffset": 181
+                    "endOffset": 173
                 },
                 "from": {
                     "file": "/Users/Gautam/AndroidStudioProjects/AndroidGPSTracking/app/src/main/res/values/strings.xml",

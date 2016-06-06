@@ -10,25 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8cbf6bcd-f397-4281-9109-a0748815b157" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/gpstracking/GPSTracker$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/gpstracking/GPSTracker$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/gpstracking/GPSTracker$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/gpstracking/GPSTracker$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/gpstracking/GPSTracker.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/gpstracking/GPSTracker.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/outputFileStates.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug-androidTest.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gpstracking/GPSTracker.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gpstracking/GPSTracker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gpstracking/TrackActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gpstracking/TrackActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AndroidGPSTracking.iws" />
@@ -71,15 +53,14 @@
       <file leaf-file-name="GPSTracker.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gpstracking/GPSTracker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="4.8323355">
-              <caret line="87" column="59" selection-start-line="87" selection-start-column="39" selection-end-line="87" selection-end-column="59" />
+            <state vertical-scroll-proportion="0.56962025">
+              <caret line="6" column="50" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
               <folding>
-                <element signature="e#0#245#0" expanded="true" />
                 <element signature="imports" expanded="true" />
-                <element signature="e#4229#4447#0" expanded="true" />
-                <element signature="e#4446#4447#0" expanded="true" />
-                <element signature="e#4502#4764#0" expanded="true" />
-                <element signature="e#4763#4764#0" expanded="true" />
+                <element signature="e#4221#4444#0" expanded="true" />
+                <element signature="e#4443#4444#0" expanded="true" />
+                <element signature="e#4499#4763#0" expanded="true" />
+                <element signature="e#4762#4763#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1960,7 +1941,13 @@
       <option name="project" value="LOCAL" />
       <updated>1465108115595</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="tested for GPS. fails over to network">
+      <created>1465167967170</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1465167967170</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1978,7 +1965,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.6909667" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.7052298" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2013,7 +2000,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added author" />
     <MESSAGE value="added buttons for settings and use network" />
-    <option name="LAST_COMMIT_MESSAGE" value="added buttons for settings and use network" />
+    <MESSAGE value="tested for GPS. fails over to network" />
+    <option name="LAST_COMMIT_MESSAGE" value="tested for GPS. fails over to network" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2033,12 +2021,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
           <folding>
-            <element signature="e#0#245#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#4229#4447#0" expanded="true" />
-            <element signature="e#4446#4447#0" expanded="true" />
-            <element signature="e#4502#4764#0" expanded="true" />
-            <element signature="e#4763#4764#0" expanded="true" />
+            <element signature="e#4221#4444#0" expanded="true" />
+            <element signature="e#4443#4444#0" expanded="true" />
+            <element signature="e#4499#4763#0" expanded="true" />
+            <element signature="e#4762#4763#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2076,12 +2063,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
           <folding>
-            <element signature="e#0#245#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#4229#4447#0" expanded="true" />
-            <element signature="e#4446#4447#0" expanded="true" />
-            <element signature="e#4502#4764#0" expanded="true" />
-            <element signature="e#4763#4764#0" expanded="true" />
+            <element signature="e#4221#4444#0" expanded="true" />
+            <element signature="e#4443#4444#0" expanded="true" />
+            <element signature="e#4499#4763#0" expanded="true" />
+            <element signature="e#4762#4763#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2119,12 +2105,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#245#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#4229#4447#0" expanded="true" />
-            <element signature="e#4446#4447#0" expanded="true" />
-            <element signature="e#4502#4764#0" expanded="true" />
-            <element signature="e#4763#4764#0" expanded="true" />
+            <element signature="e#4221#4444#0" expanded="true" />
+            <element signature="e#4443#4444#0" expanded="true" />
+            <element signature="e#4499#4763#0" expanded="true" />
+            <element signature="e#4762#4763#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2162,12 +2147,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#245#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#4229#4447#0" expanded="true" />
-            <element signature="e#4446#4447#0" expanded="true" />
-            <element signature="e#4502#4764#0" expanded="true" />
-            <element signature="e#4763#4764#0" expanded="true" />
+            <element signature="e#4221#4444#0" expanded="true" />
+            <element signature="e#4443#4444#0" expanded="true" />
+            <element signature="e#4499#4763#0" expanded="true" />
+            <element signature="e#4762#4763#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2205,12 +2189,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#245#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#4229#4447#0" expanded="true" />
-            <element signature="e#4446#4447#0" expanded="true" />
-            <element signature="e#4502#4764#0" expanded="true" />
-            <element signature="e#4763#4764#0" expanded="true" />
+            <element signature="e#4221#4444#0" expanded="true" />
+            <element signature="e#4443#4444#0" expanded="true" />
+            <element signature="e#4499#4763#0" expanded="true" />
+            <element signature="e#4762#4763#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2248,12 +2231,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#245#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#4229#4447#0" expanded="true" />
-            <element signature="e#4446#4447#0" expanded="true" />
-            <element signature="e#4502#4764#0" expanded="true" />
-            <element signature="e#4763#4764#0" expanded="true" />
+            <element signature="e#4221#4444#0" expanded="true" />
+            <element signature="e#4443#4444#0" expanded="true" />
+            <element signature="e#4499#4763#0" expanded="true" />
+            <element signature="e#4762#4763#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2327,6 +2309,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$ANDROID_SDK_HOME$/Library/Android/sdk/platforms/android-8/android.jar!/android/location/Location.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36916837">
+          <caret line="75" column="18" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
+          <folding>
+            <element signature="e#1978#1979#0" expanded="true" />
+            <element signature="e#2029#2030#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gpstracking/TrackActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2341,15 +2334,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gpstracking/GPSTracker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.8323355">
-          <caret line="87" column="59" selection-start-line="87" selection-start-column="39" selection-end-line="87" selection-end-column="59" />
+        <state vertical-scroll-proportion="0.56962025">
+          <caret line="6" column="50" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
           <folding>
-            <element signature="e#0#245#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#4229#4447#0" expanded="true" />
-            <element signature="e#4446#4447#0" expanded="true" />
-            <element signature="e#4502#4764#0" expanded="true" />
-            <element signature="e#4763#4764#0" expanded="true" />
+            <element signature="e#4221#4444#0" expanded="true" />
+            <element signature="e#4443#4444#0" expanded="true" />
+            <element signature="e#4499#4763#0" expanded="true" />
+            <element signature="e#4762#4763#0" expanded="true" />
           </folding>
         </state>
       </provider>

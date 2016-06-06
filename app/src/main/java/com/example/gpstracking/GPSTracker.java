@@ -39,7 +39,7 @@ public class GPSTracker extends Service implements LocationListener
 	double longitude;
 
 	private static final long distance = 10;
-	private static final long updateInterval = 1000 * 60 * 1;
+	private static final long updateInterval = 30000;
 	static final String TAG = "[GPS-DEBUG]";
 	protected LocationManager locationManager;
 	protected LocationListener locationListener;
@@ -159,14 +159,17 @@ public class GPSTracker extends Service implements LocationListener
 		AlertDialog.Builder alertDialog = new AlertDialog.Builder(mContext);
 		alertDialog.setTitle("GPS disabled");
 		alertDialog.setMessage("Do you want to enable it now in settings?");
-		alertDialog.setPositiveButton("Settings", new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int which) {
+		alertDialog.setPositiveButton("Settings", new DialogInterface.OnClickListener()
+		{
+			public void onClick(DialogInterface dialog, int which)
+			{
 				Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
 				mContext.startActivity(intent);
 			}
 		});
 
-		alertDialog.setNegativeButton("No. Use Network", new DialogInterface.OnClickListener() {
+		alertDialog.setNegativeButton("No. Use Network", new DialogInterface.OnClickListener()
+		{
 			public void onClick(DialogInterface dialog, int which)
 			{
 				getLocationByNetwork();

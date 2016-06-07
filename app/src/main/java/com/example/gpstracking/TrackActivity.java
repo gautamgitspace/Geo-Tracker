@@ -29,6 +29,7 @@ public class TrackActivity extends Activity
 	static final String TAG = "[GPS-DEBUG]";
 	Context context;
 
+	//Exports SQLiteDB to CSV file in Phone Storage
 	public void exportDatabase()
 	{
 		String state = Environment.getExternalStorageState();
@@ -54,13 +55,14 @@ public class TrackActivity extends Activity
 				DBHandler dbHandler = new DBHandler(getApplicationContext());
 				SQLiteDatabase sqLiteDatabase = dbHandler.getReadableDatabase();
 				Cursor curCSV = sqLiteDatabase.rawQuery("select * from footRecords", null);
-				printWriter.println("Latitude,Longitude");
+				printWriter.println("Latitude,Longitude,NETWORK_PROVIDER");
 				while(curCSV.moveToNext())
 				{
 					Double latitude = curCSV.getDouble(curCSV.getColumnIndex("LAT"));
 					Double longitude = curCSV.getDouble(curCSV.getColumnIndex("LONG"));
+					String networkProvider = curCSV.getString(curCSV.getColumnIndex("NETWORK_PROVIDER"));
 
-					String record = latitude + "," + longitude;
+					String record = latitude + "," + longitude + "," + networkProvider;
 					Log.v(TAG, "attempting to write to file");
 					printWriter.println(record);
 					Log.v(TAG, "data written to file");

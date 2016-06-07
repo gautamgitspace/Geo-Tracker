@@ -127,6 +127,7 @@ public class GPSTracker extends Service implements LocationListener
 					SQLiteDatabase sqLiteDatabase = dbHandler.getWritableDatabase();
 					contentValues.put("LAT",latitude);
 					contentValues.put("LONG",longitude);
+					contentValues.put("NETWORK_PROVIDER", "NETWORK");
 					sqLiteDatabase.insert("footRecords", null, contentValues);
 					sqLiteDatabase.close();
 				}
@@ -193,6 +194,7 @@ public class GPSTracker extends Service implements LocationListener
 					SQLiteDatabase sqLiteDatabase = dbHandler.getWritableDatabase();
 					contentValues.put("LAT",latitude);
 					contentValues.put("LONG",longitude);
+					contentValues.put("NETWORK_PROVIDER", "GPS");
 					sqLiteDatabase.insert("footRecords", null, contentValues);
 					sqLiteDatabase.close();
 

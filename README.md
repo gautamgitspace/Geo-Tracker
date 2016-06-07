@@ -1,6 +1,6 @@
 # Geo-Tracker
 An android based application that lets you track our current location.
-Uses GPS by default. If GPS is turned off, fail-overs to Network Provider.
+Uses GPS by default. If GPS is turned off, fail-overs (prompts user) to Network Provider.
 Used this app in on-going research work at UB in Crowdsourced Cellular Network 
 Performance Study Using Smartphones.
 

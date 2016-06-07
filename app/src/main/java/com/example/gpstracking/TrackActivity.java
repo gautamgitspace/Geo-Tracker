@@ -55,14 +55,18 @@ public class TrackActivity extends Activity
 				DBHandler dbHandler = new DBHandler(getApplicationContext());
 				SQLiteDatabase sqLiteDatabase = dbHandler.getReadableDatabase();
 				Cursor curCSV = sqLiteDatabase.rawQuery("select * from footRecords", null);
-				printWriter.println("Latitude,Longitude,NETWORK_PROVIDER");
+				printWriter.println("Latitude,Longitude,locality,city,state,country,NETWORK_PROVIDER");
 				while(curCSV.moveToNext())
 				{
 					Double latitude = curCSV.getDouble(curCSV.getColumnIndex("LAT"));
 					Double longitude = curCSV.getDouble(curCSV.getColumnIndex("LONG"));
 					String networkProvider = curCSV.getString(curCSV.getColumnIndex("NETWORK_PROVIDER"));
+					String locality = curCSV.getString(curCSV.getColumnIndex("LOCALITY"));
+					String city = curCSV.getString(curCSV.getColumnIndex("CITY"));
+					String stateName = curCSV.getString(curCSV.getColumnIndex("STATE"));
+					String country = curCSV.getString(curCSV.getColumnIndex("COUNTRY"));
 
-					String record = latitude + "," + longitude + "," + networkProvider;
+					String record = latitude + "," + longitude + "," + locality + "," + city + "," + stateName + "," + country + "," + networkProvider;
 					Log.v(TAG, "attempting to write to file");
 					printWriter.println(record);
 					Log.v(TAG, "data written to file");

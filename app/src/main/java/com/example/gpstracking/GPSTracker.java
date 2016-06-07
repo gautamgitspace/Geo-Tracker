@@ -128,6 +128,10 @@ public class GPSTracker extends Service implements LocationListener
 					contentValues.put("LAT",latitude);
 					contentValues.put("LONG",longitude);
 					contentValues.put("NETWORK_PROVIDER", "NETWORK");
+					contentValues.put("LOCALITY",throughFare);
+					contentValues.put("CITY",locality);
+					contentValues.put("STATE",adminArea);
+					contentValues.put("COUNTRY",countryCode);
 					sqLiteDatabase.insert("footRecords", null, contentValues);
 					sqLiteDatabase.close();
 				}
@@ -180,7 +184,7 @@ public class GPSTracker extends Service implements LocationListener
 						if(locationList.get(0).getThoroughfare()!=null)
 						{
 							throughFare = locationList.get(0).getThoroughfare();
-							Log.v("[COUNTRY]", throughFare);
+							Log.v("[THROUGH FARE]", throughFare);
 						}
 					}
 				}
@@ -195,6 +199,10 @@ public class GPSTracker extends Service implements LocationListener
 					contentValues.put("LAT",latitude);
 					contentValues.put("LONG",longitude);
 					contentValues.put("NETWORK_PROVIDER", "GPS");
+					contentValues.put("LOCALITY",throughFare);
+					contentValues.put("CITY",locality);
+					contentValues.put("STATE",adminArea);
+					contentValues.put("COUNTRY",countryCode);
 					sqLiteDatabase.insert("footRecords", null, contentValues);
 					sqLiteDatabase.close();
 

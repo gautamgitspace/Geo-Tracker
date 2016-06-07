@@ -22,7 +22,7 @@ public class DBHandler extends SQLiteOpenHelper
     private static int version=1;
     static final String TAG = "[GPS-DEBUG]";
 
-    private static final String schema = "CREATE TABLE footRecords (LAT DATA, LONG DATA)";
+    private static final String schema = "CREATE TABLE footRecords (LAT DATA, LONG DATA, NETWORK_PROVIDER DATA)";
 
     public DBHandler(Context context)
     {

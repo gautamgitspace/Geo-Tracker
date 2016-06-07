@@ -2,7 +2,7 @@
  //  MBP111.0138.B16
  //  Geo Tracker v1.2 ~ with SQLite database functionality
  //	 Geo Tracker v1.3 ~ with Export to CSV functionality
- //  TODO Geo Tracker v1.3 ~ try to reverse engineer coordinates into addresses
+ //  Geo Tracker v1.4 ~ reverse engineers coordinates into addresses
  //  System Serial: C02P4SP9G3QH
  //  Created by Abhishek Gautam on 4/04/2016
  //  agautam2@buffalo.edu
@@ -20,6 +20,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -28,6 +30,9 @@ import android.os.IBinder;
 import android.provider.Settings;
 import android.util.Log;
 import android.widget.Toast;
+
+import java.io.IOException;
+import java.util.List;
 
 
 public class GPSTracker extends Service implements LocationListener
@@ -39,10 +44,15 @@ public class GPSTracker extends Service implements LocationListener
 	boolean isNetworkEnabled = false;
 	boolean canGetLocation = false;
 	boolean useNetwork = false;
+	public Geocoder geocoder;
 
 	Location location;
 	double latitude;
 	double longitude;
+	String locality;
+	String adminArea;
+	String countryCode;
+	String throughFare;
 
 	private static final long distance = 10;
 	private static final long updateInterval = 30000;
@@ -62,8 +72,13 @@ public class GPSTracker extends Service implements LocationListener
 		try
 		{
 			Log.v(TAG, "trying to get location from Wi-Fi or Cellular Towers");
+			geocoder = new Geocoder(mContext);
 			locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, updateInterval, distance, this);
 			Log.v(TAG, "NETWORK BASED");
+			if(locationManager==null)
+			{
+				Log.v(TAG, "location manager returned null");
+			}
 			if (locationManager != null)
 			{
 				location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
@@ -73,6 +88,39 @@ public class GPSTracker extends Service implements LocationListener
 					longitude = location.getLongitude();
 					Log.v(TAG, "LAT: " + Double.toString(latitude));
 					Log.v(TAG, "LONG: " + Double.toString(longitude));
+
+					try {
+						if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER))
+						{
+							Log.v(TAG,"Attempting to resolve address");
+							List<Address> locationList = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+							Log.v(TAG,locationList.get(0).toString());
+							if(locationList.get(0).getLocality()!=null)
+							{
+								locality = locationList.get(0).getLocality();
+								Log.v("[LOCALITY]", locality);
+							}
+							if(locationList.get(0).getAdminArea()!=null)
+							{
+								adminArea = locationList.get(0).getAdminArea();
+								Log.v("[ADMIN AREA]", adminArea);
+							}
+							if(locationList.get(0).getCountryName()!=null)
+							{
+								countryCode = locationList.get(0).getCountryName();
+								Log.v("[COUNTRY]", countryCode);
+							}
+							if(locationList.get(0).getThoroughfare()!=null)
+							{
+								throughFare = locationList.get(0).getThoroughfare();
+								Log.v("[COUNTRY]", throughFare);
+							}
+						}
+					}
+					catch (IOException e)
+					{
+						e.printStackTrace();
+					}
 
 					ContentValues contentValues = new ContentValues();
 					DBHandler dbHandler = new DBHandler(mContext);
@@ -93,6 +141,7 @@ public class GPSTracker extends Service implements LocationListener
 	}
 	public Location getLocationByGPS()
 	{
+		geocoder = new Geocoder(mContext);
 		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, updateInterval, distance, this);
 		Log.v(TAG, "GPS BASED");
 		if (locationManager != null)
@@ -106,6 +155,38 @@ public class GPSTracker extends Service implements LocationListener
 				longitude = location.getLongitude();
 				Log.v(TAG, "LAT: " + Double.toString(latitude));
 				Log.v(TAG, "LONG: " + Double.toString(longitude));
+
+				try {
+					if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER))
+					{
+						Log.v(TAG,"Attempting to resolve address");
+						List<Address> locationList = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+						if(locationList.get(0).getLocality()!=null)
+						{
+							locality = locationList.get(0).getLocality();
+							Log.v("[LOCALITY]", locality);
+						}
+						if(locationList.get(0).getAdminArea()!=null)
+						{
+							adminArea = locationList.get(0).getAdminArea();
+							Log.v("[ADMIN AREA]", adminArea);
+						}
+						if(locationList.get(0).getCountryName()!=null)
+						{
+							countryCode = locationList.get(0).getCountryName();
+							Log.v("[COUNTRY]", countryCode);
+						}
+						if(locationList.get(0).getThoroughfare()!=null)
+						{
+							throughFare = locationList.get(0).getThoroughfare();
+							Log.v("[COUNTRY]", throughFare);
+						}
+					}
+				}
+				catch (IOException e)
+				{
+					e.printStackTrace();
+				}
 
 					ContentValues contentValues = new ContentValues();
 					DBHandler dbHandler = new DBHandler(mContext);
@@ -195,7 +276,10 @@ public class GPSTracker extends Service implements LocationListener
 			public void onClick(DialogInterface dialog, int which)
 			{
 				getLocationByNetwork();
-				Toast.makeText(mContext, "You are at - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
+				Toast.makeText(mContext, "You are at - " + throughFare + ", " + locality + ", " + adminArea + ", " + countryCode + "\n" +
+						"Latitude: " + latitude + "\nLongitude: " + longitude,  Toast.LENGTH_LONG).show();
+				// Toast.makeText(mContext, "You are at - \nLatitude: " + latitude + "\nLongitude: " + longitude +"\n" + throughFare+ ", " + locality + ", " + adminArea + ", " + countryCode,  Toast.LENGTH_LONG).show();
+				//Toast.makeText(mContext, "You are at - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
 
 			}
 		});
@@ -222,7 +306,22 @@ public class GPSTracker extends Service implements LocationListener
 		// return longitude
 		return longitude;
 	}
-
+	public String getLocality()
+	{
+		return locality;
+	}
+	public String getCountryCode()
+	{
+		return countryCode;
+	}
+	public String getAdminArea()
+	{
+		return adminArea;
+	}
+	public String getThroughFare()
+	{
+		return throughFare;
+	}
 
 
 	@Override

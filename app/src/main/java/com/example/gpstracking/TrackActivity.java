@@ -166,8 +166,14 @@ public class TrackActivity extends Activity
 					gps.getLocationByGPS();
 					double latitude = gps.getLatitude();
 					double longitude = gps.getLongitude();
+					String countryCode = gps.getCountryCode();
+					String adminArea = gps.getAdminArea();
+					String locality = gps.getLocality();
+					String throughFare = gps.getThroughFare();
+
 		        	// \n is for new line
-		        	Toast.makeText(getApplicationContext(), "You are at - \nLatitude: " + latitude + "\nLongitude: " + longitude, Toast.LENGTH_LONG).show();
+		        	Toast.makeText(getApplicationContext(), "You are at - " + throughFare + ", " + locality + ", " + adminArea + ", " + countryCode + "\n" +
+							"Latitude: " + latitude + "\nLongitude: " + longitude,  Toast.LENGTH_LONG).show();
 		        }
 				else
 				{

@@ -1,7 +1,7 @@
 Geo-Tracker
 ===========
 
-Geo Tracker v1.2 ~ with SQLite database functionality
+git tag -a v1.4 -m "Geo Tracker v1.2 ~ with SQLite database functionality"
 
 Geo Tracker v1.3 ~ with Export to CSV functionality
 

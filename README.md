@@ -1,7 +1,9 @@
 Geo-Tracker
 ===========
 
-|Version| |License| 
+Geo Tracker v1.2 ~ with SQLite database functionality
+Geo Tracker v1.3 ~ with Export to CSV functionality
+Geo Tracker v1.4 ~ reverse engineers coordinates into addresses
 
 An android based application that lets you track your current location.
 Uses GPS by default. If GPS is turned off, fail-overs (prompts user) to Network Provider.

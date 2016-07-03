@@ -19,3 +19,5 @@ Features:
 3. Stores data into SQLite DB and exports DB file to internal memory/SD CARD.
 4. An option to delete the DB.
 5. An option to export the data to a CSV file and store it to internal memory/SD CARD.
+
+![alt tag](https://raw.githubusercontent.com/gautamgitspace/Geo-Tracker/master/layout.png)

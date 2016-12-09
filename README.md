@@ -24,6 +24,8 @@ Performance Study Using Smartphones.
 # License
 This project is licensed under the [MIT License](https://en.wikipedia.org/wiki/MIT_License).
 
+Copyright (c) 2016 [Abhishek Gautam](http://www.acsu.buffalo.edu/~agautam2/)
+
 # Snapshots
 
 ![alt tag](https://raw.githubusercontent.com/gautamgitspace/Geo-Tracker/master/layout.png)
